@@ -52,8 +52,8 @@ if __name__ == '__main__':
     matrix = [[2, 5],
              [7, 3]]
     queu = Queue()
-    th = Thread(target=primary, name="primary", args=(matrix, ))
-    th2 = Thread(target=secondary, name="secondary", args=(matrix, ))
+    th = Thread(target=primary, name="primary", args=(matrix, ), daemon=True)  # its a daemon, because its so simple! :)
+    th2 = Thread(target=secondary, name="secondary", args=(matrix, ), daemon=True)
     th.start()
     th2.start()
 
